@@ -211,20 +211,19 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  justify-content: flex-start;
   margin-bottom: 15px;
   color: #ccc;
-  font-size: 0.9rem;
-  font-weight: normal;
+  font-size: 1rem;
   white-space: nowrap;
-  overflow-x: auto;  /* allow scrolling if needed */
+  overflow: visible;
+  justify-content: flex-start;
 }
 
 .modal-header h2 {
   margin: 0;
-  font-weight: bold;
-  background-color: lightcoral;
+  font-weight: 700;
   font-size: 1.5rem;
+  flex-shrink: 0;  
 }
 
 .modal-note {
@@ -233,8 +232,6 @@ body {
   font-weight: normal;
   white-space: nowrap;
   flex-shrink: 1;
-  opacity: 0.8;
-  background-color: rgba(255, 255, 255, 0.1); /* subtle background */
   padding: 2px 8px;
   border-radius: 6px;
 }
