@@ -121,7 +121,7 @@ body {
   max-width: 800px;
   max-height: 80vh;
   background-color: rgba(0, 0, 0, 0.9);
-  overflow: hidden; /* Prevent outer scrollbar */
+  overflow: hidden; 
   border-radius: 10px;
   box-sizing: border-box;
 }
@@ -132,7 +132,7 @@ body {
   max-height: 80vh; 
   overflow-y: auto; 
   border: 1px solid #444;
-  width: 100%; /* Full width inside modal */
+  width: 100%;
   max-width: 800px;
   overflow-x: hidden;
   color: #fff;
