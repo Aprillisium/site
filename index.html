@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Profile</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+
+    <div class="buttons">
+      <button class="btn" onclick="showSection('about')">About Me</button>
+      <button class="btn" onclick="showSection('portfolio')">My work</button>
+      <button class="btn" onclick="showSection('contact')">Socials</button>
+    </div>
+
+    <!-- Sections (hidden by default) -->
+    <div class="content" id="about">
+      <h2>About Me</h2>
+      <p>
+        She/Her. I really like making roblox avatars! Im a former top ultrakill speedrunner (had 5 official world records at my peak). I LOVE YURI!!! Im magia azure and i need to find my magia baiser... I have ADD, autism and depression so be careful with me pls...
+      </p>
+    </div>
+
+    <div class="content" id="portfolio">
+      <h2>My stuff:</h2>
+      <ul>
+        <li><a href="https://www.speedrun.com/users/3quwu" target="_blank">Speedruns</a></li>
+        <li><a href="#" onclick="openModal()">My avatars</a></li>
+
+      </ul>
+    </div>
+
+    <div class="content" id="contact">
+      <h2>Socials</h2>
+      <div class="icon-bar">
+        <!-- TWitter -->
+        <a href="https://x.com/33qwww" target="_blank" class="btn">
+          <i class="fab fa-twitter icon"></i>Twitter
+        </a>
+
+        <!-- Discord -->
+        <a href="https://discord.com/users/1145597979030470699" target="_blank" class="btn">
+          <i class="fab fa-discord icon"></i>Discord
+        </a>
+
+        <!-- Roblox -->
+        <a href="https://www.roblox.com/users/1378228694/profile" class="btn" target="_blank">
+          <img src="roblox.png" alt="Roblox" class="icon" />
+          Roblox
+        </a>
+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('.content');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      const active = document.getElementById(id);
+      if (active) active.style.display = 'block';
+    }
+
+    window.onload = () => {
+      showSection(null); // Hide all sections on load
+    };
+  </script>
+<script>
+  function openModal() {
+    document.getElementById("avatarModal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("avatarModal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("avatarModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+</script>
+</body>
+<!-- Avatar Modal -->
+<div id="avatarModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>My Avatars</h2>
+    <div class="gallery">
+      <img src="avatar1.png" alt="Avatar 1" class="avatar" />
+      <img src="avatar2.png" alt="Avatar 2" class="avatar" />
+      <img src="avatar3.png" alt="Avatar 3" class="avatar" />
+      <img src="avatar4.png" alt="Avatar 4" class="avatar" />
+      <img src="avatar5.png" alt="Avatar 5" class="avatar" />
+      <img src="avatar6.png" alt="Avatar 6" class="avatar" />
+      <img src="avatar7.png" alt="Avatar 7" class="avatar" />
+      <img src="avatar8.png" alt="Avatar 8" class="avatar avatar8" />
+      <img src="avatar9.png" alt="Avatar 9" class="avatar avatar9" />
+      <img src="avatar10.png" alt="Avatar 10" class="avatar avatar10" />
+</div>
+    </div>
+  </div>
+</div>
+</html>
