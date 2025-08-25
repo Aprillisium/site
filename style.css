@@ -210,8 +210,8 @@ body {
 .modal-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 15px;
+  gap: 15px;          
+  justify-content: flex-start; 
   margin-bottom: 15px;
   color: #ccc;
   font-size: 0.9rem;
