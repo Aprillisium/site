@@ -228,11 +228,3 @@ body {
   flex-shrink: 0;  
 }
 
-.modal-footer-note {
-  padding-top: 10px;
-  margin-top: 15px;
-  border-top: 1px solid #333;
-  color: #ccc;
-  font-size: 0.95rem;
-  text-align: center;
-}
