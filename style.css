@@ -205,11 +205,9 @@ body {
 }
 
 
-.always-visible {
-  clear: both;
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  color: #ccc;
+.note {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #aaa;
 }
