@@ -225,7 +225,8 @@ body {
 }
 
 .modal-note {
-  white-space: nowrap;
-  font-style: italic;
+  font-size: 1rem; 
+  color: #bbb; 
+  font-weight: normal;
 }
 
