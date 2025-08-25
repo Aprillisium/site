@@ -151,7 +151,7 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2rem;
   max-height: 500px;
   overflow-y: auto;
