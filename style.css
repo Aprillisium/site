@@ -206,7 +206,10 @@ body {
 
 
 .always-visible {
-  margin-top: 40px;
-  font-style: italic;
-  opacity: 0.8;
+  clear: both;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  color: #ccc;
 }
