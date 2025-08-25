@@ -205,9 +205,25 @@ body {
 }
 
 
-.note {
-  display: block;
-  margin-top: 5px;
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #ccc;
   font-size: 0.9rem;
-  color: #aaa;
+  font-weight: normal;
 }
+
+.modal-header h2 {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.modal-note {
+  white-space: nowrap;
+  font-style: italic;
+}
+
