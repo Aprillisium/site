@@ -181,6 +181,11 @@ body {
   width: 340px;
 }
 
+.avatar11 {
+  align-self: left;
+  width: 340px;
+}
+
 .gallery img:hover {
   transform: scale(1.05);
 }
