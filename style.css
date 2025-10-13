@@ -71,15 +71,23 @@ body {
   margin-bottom: 1rem;
 }
 
-.content p,
+.content p {
+  max-width: 700px;       
+  margin: 0 auto;       
+  line-height: 1.6;     
+  text-align: left;     
+  color: #ccc;
+}
+
 .content ul {
   color: #ccc;
   font-size: 1.1rem;
 }
 
 .content ul {
-  list-style: none;
-  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .content ul li {
@@ -208,8 +216,13 @@ body {
   background: #888;
 }
 
-
 @media (min-width: 601px) and (max-width: 1200px) {
+  .content p,
+  .content ul {
+    max-width: 650px; 
+    font-size: 1rem;
+  }
+
   .modal-content {
     width: 85%;
     max-width: 900px;
@@ -221,6 +234,12 @@ body {
 }
 
 @media (min-width: 1201px) {
+  .content p,
+  .content ul {
+    max-width: 800px;
+    font-size: 1.1rem;
+  }
+
   .modal-content {
     width: 70%;
     max-width: 1400px;
