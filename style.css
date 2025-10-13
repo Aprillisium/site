@@ -124,12 +124,13 @@ body {
 
 .modal-content {
   background-color: #111;
-  margin: 5% auto;
+  margin: 3vh auto;
   padding: 20px;
   border: 1px solid #444;
   width: 90%;
-  max-width: 800px;; 
-  overflow-x: hidden;
+  max-width: 1200px;
+  max-height: 85vh; 
+  overflow-y: auto;
   color: #fff;
   border-radius: 10px;
   animation: fadeIn 0.3s ease;
@@ -146,13 +147,12 @@ body {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  max-height: 500px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 1rem 0;
-  overflow-x: hidden; 
-  scroll-behavior: smooth;
+  max-height: 70vh;
 }
 
 .gallery::-webkit-scrollbar-corner {
@@ -160,10 +160,9 @@ body {
 }
 
 .avatar {
-  width: 250px;
+  width: 100%;
   height: auto;
-  border-radius: 6px;
-  align-self: center;
+  border-radius: 8px;
   transition: transform 0.3s ease;
 }
 
