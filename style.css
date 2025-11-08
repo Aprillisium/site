@@ -9,6 +9,7 @@ body {
   min-height: 100vh;
 }
 
+/* Rain background layer */
 .rain {
   position: fixed;
   inset: 0;
@@ -17,12 +18,14 @@ body {
   overflow: hidden;
 }
 
+/* Ensure main UI stays above rain */
 .container,
 .modal {
   position: relative;
   z-index: 1;
 }
 
+/* Single raindrop */
 .raindrop {
   position: absolute;
   top: -30px;
