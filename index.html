@@ -50,16 +50,16 @@
     <div class="content" id="about">
       <h2>About Me</h2>
       <p>
-        Hi! I'm April (used to be called 3q)! She/Her! I really like making roblox avatars (ps.. add me on discord if u want me to make one ;3)! I'm a former top ultrakill speedrunner (had 5 official world records at my peak). I LOVE YURI!!! I have autism and depression so be careful with me pls... I like chisa. Like a lot.
+        Hi! I'm April (used to be called 3q)! She/Her and 15 years old! I really like making roblox avatars! I'm a former top ultrakill speedrunner (had 5 official world records at my peak). I LOVE YURI!!! I have autism (specifically asperger syndrome) and depression so be careful with me pls... I like chisa. Like a lot.
       </p>
     </div>
 
     <div class="content" id="portfolio">
       <h2>My stuff:</h2>
       <ul>
-        <li><a href="https://www.speedrun.com/users/4pril" target="_blank">Speedruns</a></li>
+        <li><a href="https://www.speedrun.com/users/3quwu" target="_blank">Speedruns</a></li>
         <li><a href="#" onclick="openModal()">My avatars</a></li>
-
+        <li><a href="##" onclick="openHireModal()">Hire me</a></li>
       </ul>
     </div>
 
@@ -79,6 +79,11 @@
         <!-- Steam-->
          <a href="https://steamcommunity.com/id/3qOwO/" target="_blank" class="btn">
           <i class="fab fa-steam icon"></i>Steam
+         </a>
+
+         <!--YOutube-->
+         <a href="https://www.youtube.com/@Aprilisium" target="_blank" class="btn">
+          <i class="fab fa-youtube icon"></i>Youtube
          </a>
          
         <!-- Roblox -->
@@ -104,7 +109,7 @@
     }
 
     window.onload = () => {
-      showSection(null); // Hide all sections on load
+      showSection(null); 
     };
   </script>
 <script>
@@ -145,4 +150,45 @@
     </div>
   </div>
 </div>
+
+<!-- Hire Me Modal -->
+<div id="hireModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeHireModal()">&times;</span>
+    <h2>Hire me please!</h2>
+    <p>My guidelines:</p>
+    <ul>
+      <li>Only blocky style avatars</li>
+      <li>No NSFW or anything of that sorts</li>
+      <li>Female avatars are preferred, but male avatars are acceptable</li>
+      <li>Preferably black or white avatars</li>
+      <li>Protogen or black/white furry avatars are allowed</li>
+    </ul>
+    </p>
+    <p>Here are my current offerings and prices (subject to change):</p>
+    <ul>
+      <li>Avatar - $5.20 or 20pln or 400 robux</li>
+      <li>Each additional avatar - +$3 or  +11pln or +240 robux</li>
+    </ul>
+    <p>Payment: PayPal or Robux (without tax). Contact via Discord or Twitter</p>
+    <button class="btn" onclick="window.open('https://discord.com/users/1145597979030470699','_blank')">Message me on Discord</button>
+    <button class="btn" onclick="window.open('https://x.com/33qwww')">Message me on Twitter</button>
+  </div>
+</div>
+
+<script>
+  function openHireModal() {
+    document.getElementById('hireModal').style.display = 'block';
+  }
+  function closeHireModal() {
+    document.getElementById('hireModal').style.display = 'none';
+  }
+  (function(){
+    const handler = function(event){
+      const m = document.getElementById('hireModal');
+      if (event.target === m) closeHireModal();
+    };
+    window.addEventListener('click', handler);
+  })();
+</script>
 </html>
