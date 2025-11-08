@@ -66,8 +66,17 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #fff;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.profile-caption {
+  display: block;
+  margin-top: .5rem;
+  margin-bottom: 1.25rem; 
+  color: #ccc;
+  font-size: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 .buttons {
@@ -296,3 +305,4 @@ body {
     gap: 2rem;
   }
 }
+
