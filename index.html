@@ -14,6 +14,28 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <div class="rain" aria-hidden="true"></div>
+  <script>
+    (function() {
+      const RAIN_COUNT = 60;
+      const rain = document.querySelector('.rain');
+      if (!rain) return;
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < RAIN_COUNT; i++) {
+        const drop = document.createElement('span');
+        drop.className = 'raindrop';
+        drop.style.left = Math.random() * 100 + 'vw';
+        const duration = 0.6 + Math.random() * 0.9;
+        const delay = Math.random() * 1.5;
+        drop.style.animationDuration = duration + 's, ' + (duration * 2) + 's';
+        drop.style.animationDelay = delay + 's, ' + delay + 's';
+        drop.style.height = (12 + Math.random() * 18) + 'px';
+        drop.style.opacity = (0.2 + Math.random() * 0.5).toFixed(2);
+        frag.appendChild(drop);
+      }
+      rain.appendChild(frag);
+    })();
+  </script>
   <div class="container">
     <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
 
@@ -27,7 +49,7 @@
     <div class="content" id="about">
       <h2>About Me</h2>
       <p>
-        Im 3q! She/Her! I really like making roblox avatars (ps.. add me on discord if u want me to make one ;3)! Im a former top ultrakill speedrunner (had 5 official world records at my peak). I LOVE YURI!!! Im magia azure and i need to find my magia baiser... I have ADD, autism and depression so be careful with me pls...
+        Im April (used to be called 3q)! She/Her! I really like making roblox avatars (ps.. add me on discord if u want me to make one ;3)! I'm a former top ultrakill speedrunner (had 5 official world records at my peak). I LOVE YURI!!! I have autism and depression so be careful with me pls... also I like chisa. Like a lot
       </p>
     </div>
 
