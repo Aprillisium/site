@@ -126,11 +126,12 @@ window.onload = function() {
   const ctx = canvas.getContext('2d');
 
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = document.documentElement.scrollWidth;
+    canvas.height = document.documentElement.scrollHeight;
   }
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
+
 
   const drops = [];
   const numDrops = 150;
