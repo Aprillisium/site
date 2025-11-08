@@ -1,34 +1,7 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  background-color: #101011;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #fff;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-#rainCanvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh; 
-  pointer-events: none;
-  z-index: 0;
-  display: block; 
-}
-
-.container {
-  position: relative;
-  z-index: 1;    
-  left: 0;
-  max-width: 1200px;
-  width: 100%;      
-  margin: 0 auto;  
-  padding: 4rem 2rem;
   box-sizing: border-box;
-  text-align: center;
 }
 
 .profile-pic {
