@@ -9,7 +9,11 @@ body {
   min-height: 100vh;
 }
 
+<canvas id="rainCanvas"></canvas>
+
 .container {
+  position: relative;
+  z-index: 1;        
   text-align: center;
   padding: 2rem;
 }
@@ -249,4 +253,14 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 2rem;
   }
+
+  #rainCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
 }
