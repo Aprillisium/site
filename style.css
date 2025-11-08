@@ -8,7 +8,6 @@ canvas.height = window.innerHeight;
 const drops = [];
 const numDrops = 150; // number of raindrops
 
-// Initialize raindrops
 for (let i = 0; i < numDrops; i++) {
   drops.push({
     x: Math.random() * canvas.width,
@@ -60,7 +59,7 @@ body {
 }
 
   #rainCanvas {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
