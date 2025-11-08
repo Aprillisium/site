@@ -59,44 +59,9 @@
           <img src="roblox.png" alt="Roblox" class="icon" />
           Roblox
         </a>
-
-        </a>
       </div>
     </div>
   </div>
-
-  <script>
-    function showSection(id) {
-      const sections = document.querySelectorAll('.content');
-      sections.forEach(section => {
-        section.style.display = 'none';
-      });
-
-      const active = document.getElementById(id);
-      if (active) active.style.display = 'block';
-    }
-
-    window.onload = () => {
-      showSection(null); 
-    };
-  </script>
-<script>
-  function openModal() {
-    document.getElementById("avatarModal").style.display = "block";
-  }
-
-  function closeModal() {
-    document.getElementById("avatarModal").style.display = "none";
-  }
-
-  window.onclick = function(event) {
-    const modal = document.getElementById("avatarModal");
-    if (event.target === modal) {
-      closeModal();
-    }
-  };
-</script>
-</body>
 <!-- Avatar Modal -->
 <div id="avatarModal" class="modal">
   <div class="modal-content">
@@ -114,62 +79,48 @@
       <img src="avatar9.png" alt="Avatar 9" class="avatar avatar9" />
       <img src="avatar10.png" alt="Avatar 10" class="avatar avatar10" />
       <img src="avatar11.png" alt="Avatar 11" class="avatar avatar11" />
-</div>
+      </div>
     </div>
   </div>
 </div>
-</html>
-
-<script>
-const canvas = document.getElementById('rainCanvas');
-const ctx = canvas.getContext('2d');
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
-const drops = [];
-const numDrops = 150;
-
-for (let i = 0; i < numDrops; i++) {
-  drops.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.random() * 2 + 1,
-    speed: Math.random() * 2 + 1,
-    opacity: Math.random() * 0.5 + 0.3
-  });
-}
-
-function animateRain() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let drop of drops) {
-    ctx.beginPath();
-    ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(255,255,255,${drop.opacity})`;
-    ctx.fill();
-
-    drop.y += drop.speed;
-    if (drop.y > canvas.height) {
-      drop.y = -drop.radius;
-      drop.x = Math.random() * canvas.width;
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.content').forEach(s => s.style.display = 'none');
+      if (id) document.getElementById(id).style.display = 'block';
     }
-  }
 
-  requestAnimationFrame(animateRain);
-}
+    window.onload = () => showSection(null);
 
-animateRain();
+    function openModal() { document.getElementById("avatarModal").style.display = "block"; }
+    function closeModal() { document.getElementById("avatarModal").style.display = "none"; }
+    window.onclick = e => { if(e.target === document.getElementById("avatarModal")) closeModal(); }
 
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-</script>
-</script>
+    // Rain animation
+    const canvas = document.getElementById('rainCanvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const drops = [];
+    const numDrops = 150;
+    for (let i = 0; i < numDrops; i++) {
+      drops.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: Math.random() * 2 + 1, speed: Math.random() * 2 + 1, opacity: Math.random() * 0.5 + 0.3 });
+    }
+
+    function animateRain() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let drop of drops) {
+        ctx.beginPath();
+        ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${drop.opacity})`;
+        ctx.fill();
+        drop.y += drop.speed;
+        if (drop.y > canvas.height) { drop.y = -drop.radius; drop.x = Math.random() * canvas.width; }
+      }
+      requestAnimationFrame(animateRain);
+    }
+    animateRain();
+  </script>
 </body>
 </html>
