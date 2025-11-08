@@ -83,14 +83,9 @@
   </div>
 </div>
   <script>
-// 1. Create canvas dynamically
-const canvas = document.createElement('canvas');
-canvas.id = 'rainCanvas';
-document.body.appendChild(canvas);
-
+const canvas = document.getElementById('rainCanvas');
 const ctx = canvas.getContext('2d');
 
-// 2. Resize canvas
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -98,7 +93,6 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
-// 3. Rain drops
 const drops = [];
 const numDrops = 150;
 for (let i = 0; i < numDrops; i++) {
@@ -111,7 +105,6 @@ for (let i = 0; i < numDrops; i++) {
   });
 }
 
-// 4. Animate rain
 function animateRain() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let drop of drops) {
@@ -128,17 +121,6 @@ function animateRain() {
   requestAnimationFrame(animateRain);
 }
 animateRain();
-
-// 5. Content switching and modals (unchanged)
-function showSection(id) {
-  document.querySelectorAll('.content').forEach(s => s.style.display = 'none');
-  if (id) document.getElementById(id).style.display = 'block';
-}
-window.onload = () => showSection(null);
-
-function openModal() { document.getElementById("avatarModal").style.display = "block"; }
-function closeModal() { document.getElementById("avatarModal").style.display = "none"; }
-window.onclick = e => { if(e.target === document.getElementById("avatarModal")) closeModal(); }
   </script>
 </body>
 </html>
