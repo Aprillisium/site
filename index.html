@@ -15,15 +15,14 @@
 </head>
 <body>
   <canvas id="rainCanvas"></canvas>
-  <div id="pageWrapper">
-    <div class="container">
-    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+  <div class="container">
+  <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
 
-      <div class="buttons">
-        <button class="btn" onclick="showSection('about')">About Me</button>
-        <button class="btn" onclick="showSection('portfolio')">My work</button>
-        <button class="btn" onclick="showSection('contact')">Socials</button>
-      </div>
+    <div class="buttons">
+      <button class="btn" onclick="showSection('about')">About Me</button>
+      <button class="btn" onclick="showSection('portfolio')">My work</button>
+      <button class="btn" onclick="showSection('contact')">Socials</button>
+    </div>
 
     <!-- Sections (hidden by default) -->
     <div class="content" id="about">
@@ -85,43 +84,62 @@
   </div>
 </div>
   <script>
-    function showSection(id) {
-      document.querySelectorAll('.content').forEach(s => s.style.display = 'none');
-      if (id) document.getElementById(id).style.display = 'block';
+// 1. Create canvas dynamically
+const canvas = document.createElement('canvas');
+canvas.id = 'rainCanvas';
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext('2d');
+
+// 2. Resize canvas
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+// 3. Rain drops
+const drops = [];
+const numDrops = 150;
+for (let i = 0; i < numDrops; i++) {
+  drops.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 2 + 1,
+    speed: Math.random() * 2 + 1,
+    opacity: Math.random() * 0.5 + 0.3
+  });
+}
+
+// 4. Animate rain
+function animateRain() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let drop of drops) {
+    ctx.beginPath();
+    ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,255,255,${drop.opacity})`;
+    ctx.fill();
+    drop.y += drop.speed;
+    if (drop.y > canvas.height) {
+      drop.y = -drop.radius;
+      drop.x = Math.random() * canvas.width;
     }
+  }
+  requestAnimationFrame(animateRain);
+}
+animateRain();
 
-    window.onload = () => showSection(null);
+// 5. Content switching and modals (unchanged)
+function showSection(id) {
+  document.querySelectorAll('.content').forEach(s => s.style.display = 'none');
+  if (id) document.getElementById(id).style.display = 'block';
+}
+window.onload = () => showSection(null);
 
-    function openModal() { document.getElementById("avatarModal").style.display = "block"; }
-    function closeModal() { document.getElementById("avatarModal").style.display = "none"; }
-    window.onclick = e => { if(e.target === document.getElementById("avatarModal")) closeModal(); }
-
-    // Rain animation
-    const canvas = document.getElementById('rainCanvas');
-    const ctx = canvas.getContext('2d');
-    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    const drops = [];
-    const numDrops = 150;
-    for (let i = 0; i < numDrops; i++) {
-      drops.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, radius: Math.random() * 2 + 1, speed: Math.random() * 2 + 1, opacity: Math.random() * 0.5 + 0.3 });
-    }
-
-    function animateRain() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let drop of drops) {
-        ctx.beginPath();
-        ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${drop.opacity})`;
-        ctx.fill();
-        drop.y += drop.speed;
-        if (drop.y > canvas.height) { drop.y = -drop.radius; drop.x = Math.random() * canvas.width; }
-      }
-      requestAnimationFrame(animateRain);
-    }
-    animateRain();
+function openModal() { document.getElementById("avatarModal").style.display = "block"; }
+function closeModal() { document.getElementById("avatarModal").style.display = "none"; }
+window.onclick = e => { if(e.target === document.getElementById("avatarModal")) closeModal(); }
   </script>
 </body>
 </html>
