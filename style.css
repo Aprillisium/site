@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  position: fixed;
+  position: relative;
   z-index: 1;
   max-width: 1200px;
   width: 100%;
@@ -26,6 +26,7 @@ body {
   padding: 4rem 2rem;
   text-align: center;
 }
+
 .profile-pic {
   width: 150px;
   height: 150px;
