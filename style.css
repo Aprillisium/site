@@ -1,9 +1,31 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  background-color: #101011;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow: hidden; 
 }
 
+#rainCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100%; 
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+}
+
+.container {
+  position: fixed;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
 .profile-pic {
   width: 150px;
   height: 150px;
