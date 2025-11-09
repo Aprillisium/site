@@ -269,6 +269,11 @@ body {
   width: 400px;
 }
 
+.avatar12 {
+  align-self: right;
+  width: 420px;
+}
+
 .gallery img:hover {
   transform: scale(1.05);
 }
