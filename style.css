@@ -279,6 +279,11 @@ body {
   width: 390px;
 }
 
+.avatar14 {
+  align-self: right;
+  width: 460px;
+}
+
 .gallery img:hover {
   transform: scale(1.05);
 }
