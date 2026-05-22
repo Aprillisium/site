@@ -258,7 +258,7 @@ body {
 .avatar16 {
   align-self: right;
   width: 240px;
-  grid-column: 2 / -2;
+  grid-column: 2 / -1;
 }
 
 .gallery img:hover {
