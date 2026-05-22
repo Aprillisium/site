@@ -200,7 +200,7 @@ body {
   overflow-x: hidden;
   padding: 1rem 0;
   max-height: 70vh;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .gallery::-webkit-scrollbar-corner {
@@ -281,6 +281,17 @@ body {
   background: #b8ebeb;
 }
 
+@media (max-width: 600px) {
+  .content p,
+  .content ul {
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (min-width: 601px) and (max-width: 1200px) {
   .content p,
   .content ul {
@@ -294,7 +305,7 @@ body {
   }
 
   .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+     grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -311,7 +322,7 @@ body {
   }
 
   .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 2rem;
   }
 }
