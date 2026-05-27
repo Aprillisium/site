@@ -58,6 +58,13 @@ body {
   margin-top: .5em;
 }
 
+.footnote2 {
+  font-style: italic;
+  font-size: .85em;
+  color: rgba(128, 128, 128, 0.7);
+  margin-top: .3em;
+}
+
 .btn {
   background-color: #def5fa;
   color: #000000;
