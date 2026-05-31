@@ -214,42 +214,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-.avatar8 {
-  align-self: left;
-}
-
-.avatar9 {
-  align-self: left;
-}
-
-.avatar10 {
-  align-self: left;
-}
-
-.avatar11 {
-  align-self: left;
-}
-
-.avatar12 {
-  align-self: right;
-}
-
-.avatar13 {
-  align-self: right;
-}
-
-.avatar14 {
-  align-self: right;
-}
-
-.avatar15 {
-  align-self: right;
-}
-
-.avatar16 {
-  align-self: right;
-}
-
 .gallery img:hover {
   transform: scale(1.05);
 }
