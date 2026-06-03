@@ -5,7 +5,7 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="About 3q" />
+  <meta name="apple-mobile-web-app-title" content="About april" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -154,7 +154,7 @@
   };
 </script>
 <script>
-  // petals
+  // Petal background
   (function(){
     const root = document.querySelector('.petals');
     if (!root) return;
@@ -202,7 +202,7 @@
       setTimeout(() => p.remove(), ttl);
     }
 
-    // Spawn loop tuned to be lightweight
+    // Spawn loop
     let running = true;
     const densityBase = 0.9; // probability per tick
     function loop() {
@@ -212,7 +212,7 @@
     }
     loop();
 
-    // Pause when page is hidden
+    // pause when page is hidden
     document.addEventListener('visibilitychange', () => {
       running = !document.hidden;
       if (running) loop();
