@@ -109,7 +109,7 @@
   };
 </script>
 <script>
-  // Petal background
+  // bg
   (function(){
     const root = document.querySelector('.petals');
     if (!root) return;
@@ -120,7 +120,7 @@
       const p = document.createElement('div');
       p.className = 'petal';
 
-      // Randomize fixed position anywhere in the viewport
+      // random pos
       const x = rand(0, Math.max(0, window.innerWidth - 20));
       const y = rand(0, Math.max(0, window.innerHeight - 20));
 
@@ -128,7 +128,7 @@
       const duration = rand(5, 10); // seconds
       const delay = rand(0, 2); // seconds
       const baseRot = rand(0, 360);
-      const amp = rand(3, 8); // degrees tilt amplitude
+      const amp = rand(3, 8); // degrees tilt
       const tiltDur = rand(1.8, 3.2);
       const tiltDelay = rand(0, 0.8);
       const hue = rand(-8, 8);
@@ -151,15 +151,13 @@
       p.style.animation = `fadeInOut ${duration}s ease-in-out ${delay}s 1 both`;
 
       root.appendChild(p);
-
-      // Cleanup after animation ends
       const ttl = (duration + delay) * 1000 + 100;
       setTimeout(() => p.remove(), ttl);
     }
 
-    // Spawn loop
+    // spawn loop
     let running = true;
-    const densityBase = 0.9; // probability per tick
+    const densityBase = 0.9; // probability
     function loop() {
       if (!running) return;
       if (Math.random() < densityBase) spawnPetal();
